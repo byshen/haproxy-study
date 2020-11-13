@@ -161,7 +161,7 @@ CPU = generic
 ARCH =
 
 #### Toolchain options.
-CC = cc
+CC = wllvm
 LD = $(CC)
 
 #### Debug flags (typically "-g").
@@ -261,7 +261,8 @@ CPU_CFLAGS.i686       = -O2 -march=i686
 CPU_CFLAGS.ultrasparc = -O6 -mcpu=v9 -mtune=ultrasparc
 CPU_CFLAGS.power8     = -O2 -mcpu=power8 -mtune=power8
 CPU_CFLAGS.power9     = -O2 -mcpu=power9 -mtune=power9
-CPU_CFLAGS            = $(CPU_CFLAGS.$(CPU))
+CPU_CFLAGS            = -O0
+#CPU_CFLAGS            = $(CPU_CFLAGS.$(CPU))
 
 #### ARCH dependent flags, may be overridden by CPU flags
 ARCH_FLAGS.32     = -m32
